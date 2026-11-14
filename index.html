@@ -28,14 +28,14 @@
   .badge b{display:block;font-size:.95rem}
   .badge i{font-style:normal;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--navy);color:var(--gold-2)}
   .badge.b1{left:-40px;top:52%}.badge.b2{right:-30px;bottom:24%}
-  @media(max-width:880px){.hero{padding-top:110px}.hero-grid{grid-template-columns:1fr;gap:10px}.hero-copy{padding-bottom:20px}.hero-photo{width:min(320px,80%)}.badge.b1{left:-14px}.badge.b2{right:-14px}}
+  @media(max-width:880px){.hero{padding-top:110px}.hero-grid{grid-template-columns:1fr;gap:10px}.hero-copy{padding-bottom:20px}.hero-photo{width:min(320px,80%)}.badge.b1{left:-14px;top:40%}.badge.b2{right:-14px;bottom:12%}}
   @media(max-width:480px){
     .hero-photo{width:72%}
     .badge{font-size:.7rem;padding:7px 10px;gap:8px}.badge b{font-size:.8rem}.badge i{width:26px;height:26px;font-size:.8rem}
     .badge.b1{left:-18%;top:44%}.badge.b2{right:-18%;bottom:24%}
     .hero h1{font-size:2.05rem}
     .chips span{font-size:.74rem;padding:5px 10px}
-    .stats{gap:12px}.stat{padding:20px 12px}.stat > span{font-size:.68rem;letter-spacing:.04em}
+    .stat > span{font-size:.64rem;letter-spacing:.04em;display:block;line-height:1.3}
     .seg-grid{grid-template-columns:1fr 1fr;gap:10px}
     .seg{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
     .seg i{width:40px;height:40px;font-size:1.2rem}.seg b{font-size:.9rem}
@@ -46,11 +46,11 @@
 
   /* NÚMEROS */
   .stats-wrap{position:relative;z-index:3;margin-top:-1px;background:var(--bg-soft);padding:0 0 10px}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;transform:translateY(-50px)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;transform:translateY(-50px);max-width:900px}
   .stat{background:#fff;border-radius:var(--radius);padding:26px 22px;text-align:center;box-shadow:0 18px 40px -22px rgba(11,26,58,.35);border-bottom:3px solid var(--gold)}
   .stat b{display:block;font-family:"Playfair Display",serif;font-size:clamp(2rem,3.6vw,2.7rem);color:var(--navy);line-height:1.1}
   .stat > span{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  @media(max-width:880px){.stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.stats{gap:10px;transform:translateY(-36px)}.stat{padding:18px 6px}.stat b{font-size:1.7rem}.stat > span{font-size:.64rem;letter-spacing:.04em;display:block;line-height:1.3}}
 
   /* SEGMENTOS */
   .segs{background:var(--bg-soft);padding-top:40px}
@@ -258,11 +258,9 @@
 <!-- NÚMEROS (edite os valores em data-count) -->
 <div class="stats-wrap">
   <div class="wrap stats">
-    <!-- ⚠️ EDITAR: confirmar números reais com o cliente -->
-    <div class="stat reveal"><b><span data-count="10">0</span>+</b><span>Anos de história</span></div>
-    <div class="stat reveal"><b><span data-count="300">0</span>+</b><span>Clientes atendidos</span></div>
-    <div class="stat reveal"><b><span data-count="150">0</span>+</b><span>Empresas abertas</span></div>
-    <div class="stat reveal"><b><span data-count="98">0</span>%</b><span>Clientes satisfeitos</span></div>
+    <div class="stat reveal"><b>+<span data-count="15">0</span></b><span>Anos de história</span></div>
+    <div class="stat reveal"><b>+<span data-count="1000">0</span></b><span>Clientes atendidos</span></div>
+    <div class="stat reveal"><b>+<span data-count="500">0</span></b><span>Empresas abertas</span></div>
   </div>
 </div>
 

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   /* HERO */
   .hero{position:relative;background:radial-gradient(900px 500px at 80% 20%,rgba(201,162,74,.2),transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 60%,var(--navy-3) 100%);color:#fff;padding:140px 0 0;overflow:hidden}
@@ -31,6 +31,7 @@
   .badge{position:absolute;background:rgba(255,255,255,.96);color:var(--navy);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);font-size:.82rem;display:flex;gap:10px;align-items:center;z-index:2}
   .badge b{display:block;font-size:.95rem}
   .badge i{font-style:normal;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--navy);color:var(--gold-2)}
+  .badge i .ico{width:18px;height:18px}
   .badge.b1{left:-40px;top:52%}.badge.b2{right:-30px;bottom:24%}
   @media(max-width:880px){.hero{padding-top:110px}.hero-grid{grid-template-columns:1fr;gap:10px}.hero-copy{padding-bottom:20px}.hero-photo{width:min(320px,80%)}.badge.b1{left:-14px;top:40%}.badge.b2{right:-14px;bottom:12%}}
   @media(max-width:480px){
@@ -42,7 +43,8 @@
     .stat > span{font-size:.64rem;letter-spacing:.04em;display:block;line-height:1.3}
     .seg-grid{grid-template-columns:1fr 1fr;gap:10px}
     .seg{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
-    .seg i{width:40px;height:40px;font-size:1.2rem}.seg b{font-size:.9rem}
+    .seg i{width:42px;height:42px}.seg i .ico{width:21px;height:21px}
+    .badge i .ico{width:15px;height:15px}.seg b{font-size:.9rem}
     .tab{padding:14px}.tab small{font-size:.78rem}
     .panel h3{font-size:1.5rem}
     .cta{padding:50px 20px;border-radius:22px}
@@ -61,7 +63,8 @@
   .seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .seg{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:14px;background:#fff;border:1px solid #ece6d6;transition:border-color .2s,transform .2s}
   .seg:hover{border-color:var(--gold);transform:translateY(-3px)}
-  .seg i{font-style:normal;font-size:1.4rem;width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--navy)}
+  .seg i{font-style:normal;width:48px;height:48px;flex:none;border-radius:12px;display:grid;place-items:center;background:linear-gradient(150deg,var(--navy),var(--navy-3));color:var(--gold-2);box-shadow:inset 0 0 0 1px rgba(230,199,122,.25);transition:transform .25s}
+  .seg:hover i{transform:rotate(-6deg) scale(1.06)}
   .seg small{display:block;font-size:.72rem;color:var(--muted)}
   .seg b{color:var(--navy);font-size:.98rem}
   .seg-note{text-align:center;margin-top:28px;color:var(--muted)}
@@ -73,12 +76,13 @@
   .need{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}
   .tabs{display:grid;gap:12px}
   .tab{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:pointer;text-align:left;font-family:inherit;transition:all .2s}
-  .tab i{font-style:normal;width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--bg-soft);font-size:1.2rem}
+  .tab i{font-style:normal;width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--bg-soft);color:var(--navy);transition:background .2s,color .2s}
+  .tab i .ico{width:22px;height:22px}
   .tab b{display:block;color:var(--navy);font-size:1rem}
   .tab small{color:var(--muted);font-size:.84rem}
   .tab::after{content:"›";margin-left:auto;font-size:1.5rem;color:var(--muted)}
   .tab[aria-selected="true"]{border-color:var(--gold);box-shadow:0 12px 30px -18px rgba(11,26,58,.4)}
-  .tab[aria-selected="true"] i{background:var(--navy)}
+  .tab[aria-selected="true"] i{background:var(--navy);color:var(--gold-2)}
   .tab[aria-selected="true"]::after{color:var(--gold-dark)}
   .panel{background:linear-gradient(150deg,var(--navy),var(--navy-3));color:#fff;border-radius:22px;padding:40px;min-height:100%}
   .panel[hidden]{display:none}
@@ -95,7 +99,9 @@
   .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .25s,box-shadow .25s}
   .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .svc .ic{font-size:1.6rem;margin-bottom:12px}
+  .svc .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;background:#f3ead3;color:var(--gold-dark);transition:background .25s,color .25s}
+  .svc .ic .ico{width:26px;height:26px}
+  .svc:hover .ic{background:var(--navy);color:var(--gold-2)}
   .svc h3{font-size:1.05rem;color:var(--navy);margin-bottom:6px}
   .svc p{color:var(--muted);font-size:.92rem}
   @media(max-width:980px){.svc-grid{grid-template-columns:1fr 1fr}}
@@ -153,6 +159,29 @@
   .about blockquote{font-family:"Playfair Display",serif;font-style:italic;font-size:1.3rem;color:var(--navy);border-left:3px solid var(--gold);padding-left:20px;margin:24px 0}
   .about p{color:var(--muted);margin-bottom:14px}
   @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* BASTIDORES */
+  .behind{padding-top:0}
+  .mosaic{display:grid;grid-template-columns:1.25fr 1fr .9fr;grid-template-rows:280px 230px;gap:16px}
+  .mosaic figure{position:relative;margin:0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--navy)}
+  .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .mosaic figure:hover img{transform:scale(1.06)}
+  .mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-weight:600;font-size:.92rem;background:linear-gradient(to top,rgba(11,26,58,.92),transparent)}
+  .m-a{grid-column:1 / 3}
+  .m-b{grid-column:3;grid-row:1 / 3}
+  .m-b img{object-position:50% 20%}
+  .m-c{grid-column:1}
+  .m-c img{object-position:50% 30%}
+  .m-d{grid-column:2;border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;color:#fff;background:radial-gradient(400px 200px at 100% 0%,rgba(201,162,74,.35),transparent 60%),linear-gradient(150deg,var(--navy),var(--navy-3));box-shadow:var(--shadow);transition:transform .25s}
+  .m-d:hover{transform:translateY(-4px)}
+  .m-d .ico{width:34px;height:34px;color:var(--gold-2);margin-bottom:auto}
+  .m-d b{font-family:"Playfair Display",serif;font-size:1.35rem;line-height:1.2}
+  .m-d span{color:var(--gold-2);font-size:.9rem;font-weight:600}
+  @media(max-width:880px){
+    .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:220px 260px auto}
+    .m-a{grid-column:1 / 3;grid-row:1}.m-b{grid-column:2;grid-row:2}.m-c{grid-column:1;grid-row:2}.m-d{grid-column:1 / 3;grid-row:3;min-height:150px}
+  }
+  @media(max-width:480px){.mosaic{gap:10px}.mosaic figcaption{font-size:.76rem;padding:28px 12px 10px;line-height:1.3}}
 
   /* PASSOS */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
@@ -213,6 +242,24 @@
   <symbol id="ig" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-3.3a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1z"/></symbol>
   <symbol id="mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.6 7l6.4 4.3L18.4 7H5.6z"/></symbol>
   <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5c0 3.2 3.4 8 5 10 1.6-2 5-6.8 5-10a5 5 0 0 0-5-5zm0 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v1.5a2.7 2.7 0 0 1-5.3 0 2.7 2.7 0 0 1-5.4 0 2.7 2.7 0 0 1-5.3 0z"/><path d="M5 12.5V20h14v-7.5"/><path d="M10 20v-5h4v5"/></g></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/><path d="M11 13v2h2v-2"/></g></symbol>
+  <symbol id="i-stetho" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a5 5 0 0 0 10 0V3"/><path d="M4 3h2M14 3h2"/><path d="M10 14v2a5 5 0 0 0 10 0v-2.5"/><circle cx="20" cy="11.5" r="2"/></g></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0"/><path d="M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></g></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></g></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M2 19.5h20"/><path d="M9 8l-2 2.5L9 13M15 8l2 2.5-2 2.5"/></g></symbol>
+  <symbol id="i-hardhat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></g></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M4 7h16"/><path d="M12 3.5 9 5"/><path d="M6 7l-3 7a3 3 0 0 0 6 0z"/><path d="M18 7l-3 7a3 3 0 0 0 6 0z"/></g></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></g></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l4 4-4 4"/><path d="M20 7H4"/><path d="M8 21l-4-4 4-4"/><path d="M4 17h16"/></g></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M8 8h8M8 12h8M8 16h5"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/><path d="M15 8h4v4"/></g></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></g></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8v4H8z"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></g></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></g></symbol>
+  <symbol id="i-filecheck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></g></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></g></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></g></symbol>
   <symbol id="mark" viewBox="0 0 48 48">
     <path d="M10 36a17 17 0 0 0 30-4" fill="none" stroke="#e6c77a" stroke-width="2.6" stroke-linecap="round"/>
     <rect x="16" y="24" width="4.5" height="10" rx="1" fill="#c9a24a"/><rect x="22" y="18" width="4.5" height="16" rx="1" fill="#d6b45f"/>
@@ -231,6 +278,7 @@
       <a href="#cfo">CFO Contábil</a>
       <a href="#planilha">Planilha</a>
       <a href="#blog">Blog</a>
+      <a href="#equipe">Equipe</a>
       <a href="#contato">Contato</a>
       <a class="btn btn-gold" href="#" data-wa aria-label="Fale conosco no WhatsApp"><svg><use href="#wa"/></svg><span class="lbl">Fale conosco</span></a>
     </nav>
@@ -253,8 +301,8 @@
     <div class="hero-photo reveal">
       <div class="ring"></div><div class="ring2"></div>
       <img src="img/joelson-hero.webp" width="760" height="1111" fetchpriority="high" alt="Joelson Lustosa, contador e CEO">
-      <div class="badge b1"><i>★</i><div><b>Joelson Lustosa</b>Contador e CEO</div></div>
-      <div class="badge b2"><i>💬</i><div><b>Atendimento humano</b>direto pelo WhatsApp</div></div>
+      <div class="badge b1"><i><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></i><div><b>Joelson Lustosa</b>Contador e CEO</div></div>
+      <div class="badge b2"><i><svg class="ico" aria-hidden="true"><use href="#i-msg"/></svg></i><div><b>Atendimento humano</b>direto pelo WhatsApp</div></div>
     </div>
   </div>
 </section>
@@ -277,14 +325,14 @@
       <p>Cada atividade tem regras, impostos e oportunidades diferentes. A gente conhece as particularidades do seu segmento.</p>
     </div>
     <div class="seg-grid">
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Tenho um comércio e quero falar sobre contabilidade."><i>🛍️</i><div><small>Contabilidade para</small><b>Comércio e varejo</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou prestador de serviços e quero falar sobre contabilidade."><i>🧰</i><div><small>Contabilidade para</small><b>Prestadores de serviço</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou profissional da saúde e quero falar sobre contabilidade."><i>🩺</i><div><small>Contabilidade para</small><b>Profissionais da saúde</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou MEI e quero ajuda com a contabilidade."><i>🚀</i><div><small>Contabilidade para</small><b>MEI e pequenos negócios</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Tenho um restaurante/alimentação e quero falar sobre contabilidade."><i>🍽️</i><div><small>Contabilidade para</small><b>Alimentação</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou produtor digital e quero falar sobre contabilidade."><i>💻</i><div><small>Contabilidade para</small><b>Produtores digitais</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Atuo com construção e quero falar sobre contabilidade."><i>🏗️</i><div><small>Contabilidade para</small><b>Construção civil</b></div></a>
-      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou profissional liberal e quero falar sobre contabilidade."><i>⚖️</i><div><small>Contabilidade para</small><b>Profissionais liberais</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Tenho um comércio e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-store"/></svg></i><div><small>Contabilidade para</small><b>Comércio e varejo</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou prestador de serviços e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></i><div><small>Contabilidade para</small><b>Prestadores de serviço</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou profissional da saúde e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-stetho"/></svg></i><div><small>Contabilidade para</small><b>Profissionais da saúde</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou MEI e quero ajuda com a contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg></i><div><small>Contabilidade para</small><b>MEI e pequenos negócios</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Tenho um restaurante/alimentação e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-utensils"/></svg></i><div><small>Contabilidade para</small><b>Alimentação</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou produtor digital e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-laptop"/></svg></i><div><small>Contabilidade para</small><b>Produtores digitais</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Atuo com construção e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-hardhat"/></svg></i><div><small>Contabilidade para</small><b>Construção civil</b></div></a>
+      <a class="seg reveal" href="#" data-wa data-msg="Olá! Sou profissional liberal e quero falar sobre contabilidade."><i><svg class="ico" aria-hidden="true"><use href="#i-scale"/></svg></i><div><small>Contabilidade para</small><b>Profissionais liberais</b></div></a>
     </div>
     <p class="seg-note">Não encontrou o seu segmento? <a href="#" data-wa>Fale com a gente no WhatsApp</a></p>
   </div>
@@ -300,10 +348,10 @@
     </div>
     <div class="need">
       <div class="tabs" role="tablist">
-        <button class="tab" role="tab" aria-selected="true" aria-controls="p1"><i>🏢</i><span><b>Abrir minha empresa</b><small>CNPJ com a estrutura certa desde o início</small></span></button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="p2"><i>🔄</i><span><b>Trocar de contador</b><small>Migração sem perder nenhum prazo</small></span></button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="p3"><i>🧾</i><span><b>Declarar meu Imposto de Renda</b><small>IRPF sem erro e com as deduções legais</small></span></button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="p4"><i>📈</i><span><b>Organizar as finanças</b><small>Saber quanto a empresa realmente lucra</small></span></button>
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p1"><i><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg></i><span><b>Abrir minha empresa</b><small>CNPJ com a estrutura certa desde o início</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p2"><i><svg class="ico" aria-hidden="true"><use href="#i-swap"/></svg></i><span><b>Trocar de contador</b><small>Migração sem perder nenhum prazo</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p3"><i><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg></i><span><b>Declarar meu Imposto de Renda</b><small>IRPF sem erro e com as deduções legais</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p4"><i><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></i><span><b>Organizar as finanças</b><small>Saber quanto a empresa realmente lucra</small></span></button>
       </div>
       <div>
         <div class="panel" id="p1" role="tabpanel">
@@ -347,14 +395,14 @@
       <h2>Soluções completas para empresas e pessoas físicas</h2>
     </div>
     <div class="svc-grid">
-      <article class="svc reveal"><div class="ic">🏢</div><h3>Abertura de empresa</h3><p>CNPJ, alvarás e o melhor enquadramento tributário.</p></article>
-      <article class="svc reveal"><div class="ic">📒</div><h3>Contabilidade completa</h3><p>Escrituração, balanços e demonstrativos em dia.</p></article>
-      <article class="svc reveal"><div class="ic">🧮</div><h3>Fiscal e tributário</h3><p>Apuração de impostos e planejamento tributário.</p></article>
-      <article class="svc reveal"><div class="ic">👥</div><h3>Departamento pessoal</h3><p>Folha, admissões, rescisões e eSocial.</p></article>
-      <article class="svc reveal"><div class="ic">🚀</div><h3>MEI</h3><p>Formalização, DAS, declaração anual e migração para ME.</p></article>
-      <article class="svc reveal"><div class="ic">🧾</div><h3>Imposto de Renda</h3><p>IRPF, malha fina, carnê-leão e retificações.</p></article>
-      <article class="svc reveal"><div class="ic">⚖️</div><h3>Reforma Tributária</h3><p>Simulações de IBS/CBS e escolha do melhor regime.</p></article>
-      <article class="svc reveal"><div class="ic">📍</div><h3>Regularização</h3><p>Pendências, certidões e baixa de CNPJ.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg></div><h3>Abertura de empresa</h3><p>CNPJ, alvarás e o melhor enquadramento tributário.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></div><h3>Contabilidade completa</h3><p>Escrituração, balanços e demonstrativos em dia.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-calc"/></svg></div><h3>Fiscal e tributário</h3><p>Apuração de impostos e planejamento tributário.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></div><h3>Departamento pessoal</h3><p>Folha, admissões, rescisões e eSocial.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg></div><h3>MEI</h3><p>Formalização, DAS, declaração anual e migração para ME.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg></div><h3>Imposto de Renda</h3><p>IRPF, malha fina, carnê-leão e retificações.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-scale"/></svg></div><h3>Reforma Tributária</h3><p>Simulações de IBS/CBS e escolha do melhor regime.</p></article>
+      <article class="svc reveal"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-filecheck"/></svg></div><h3>Regularização</h3><p>Pendências, certidões e baixa de CNPJ.</p></article>
     </div>
   </div>
 </section>
@@ -443,6 +491,27 @@
   </div>
 </section>
 
+<!-- BASTIDORES (troque as fotos em img/bastidores-*.jpg quando tiver fotos do time) -->
+<section class="behind" id="equipe">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Bastidores</span>
+      <h2>Contabilidade feita <em>por pessoas</em></h2>
+      <p>Por trás de cada guia, balanço e declaração existe um time que conhece o seu negócio pelo nome.</p>
+    </div>
+    <div class="mosaic">
+      <figure class="m-a reveal"><img src="img/bastidores-evento.jpg" alt="Encontro CFO Churrasco &amp; Negócios com clientes e parceiros" loading="lazy"><figcaption>Encontros com clientes e parceiros</figcaption></figure>
+      <figure class="m-b reveal"><img src="img/bastidores-treinamento.jpg" alt="Apresentação da equipe no escritório" loading="lazy"><figcaption>Rotina e capacitação do time</figcaption></figure>
+      <figure class="m-c reveal"><img src="img/joelson-office.jpg" alt="Joelson Lustosa no escritório" loading="lazy"><figcaption>Atendimento próximo, direto com o especialista</figcaption></figure>
+      <a class="m-d reveal" href="https://www.instagram.com/joelsonlustosa_contabilidade/" target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#ig"/></svg>
+        <b>Acompanhe o dia a dia do escritório</b>
+        <span>@joelsonlustosa_contabilidade →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- PASSOS -->
 <section style="padding-top:0">
   <div class="wrap">
@@ -472,15 +541,15 @@
     </div>
     <div class="posts">
       <a class="post reveal" href="blog/reforma-tributaria-2027.html">
-        <div class="thumb"><span>Reforma Tributária: o que muda em 2027</span></div>
+        <div class="thumb"><img src="img/blog-reforma.webp" alt="Reforma Tributária: IBS e CBS em 2027" loading="lazy"></div>
         <div class="body"><span class="cat">Reforma Tributária</span><h3>IBS e CBS: o que sua empresa precisa decidir agora</h3><p>Entenda o calendário da transição e por que a escolha do regime importa.</p><span class="more">Ler artigo →</span></div>
       </a>
       <a class="post reveal" href="blog/index.html">
-        <div class="thumb"><span>MEI: quando é hora de virar ME?</span></div>
+        <div class="thumb"><img src="img/blog-mei.webp" alt="MEI: quando é hora de virar ME" loading="lazy"></div>
         <div class="body"><span class="cat">MEI</span><h3>Estourou o limite do MEI? Veja o que fazer</h3><p>Sinais de que seu negócio cresceu e como migrar sem dor de cabeça.</p><span class="more">Em breve →</span></div>
       </a>
       <a class="post reveal" href="blog/index.html">
-        <div class="thumb"><span>Pró-labore x lucro</span></div>
+        <div class="thumb"><img src="img/blog-prolabore.webp" alt="Pró-labore x lucro" loading="lazy"></div>
         <div class="body"><span class="cat">Gestão financeira</span><h3>Pare de misturar o dinheiro da empresa com o seu</h3><p>Como definir seu pró-labore e organizar as finanças do negócio.</p><span class="more">Em breve →</span></div>
       </a>
     </div>

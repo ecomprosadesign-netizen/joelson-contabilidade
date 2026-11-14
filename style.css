@@ -14,6 +14,7 @@ h1,h2,h3,h4{line-height:1.15}
 .serif{font-family:"Playfair Display",Georgia,serif}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark)}
 .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+.ico{width:24px;height:24px;display:block;flex:none}
 h1,h2,h3{text-wrap:balance}
 p,li{text-wrap:pretty}
 .btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:1rem;line-height:1.2;text-align:center;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s;cursor:pointer;border:0;font-family:inherit}
@@ -96,6 +97,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
 .post:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
 .post .thumb{aspect-ratio:16/9;background:linear-gradient(150deg,var(--navy),var(--navy-3));display:flex;align-items:flex-end;padding:18px;position:relative;overflow:hidden}
 .post .thumb::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(230,199,122,.3)}
+.post .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.post:hover .thumb img{transform:scale(1.06)}
+.post .thumb:has(img)::after{display:none}
 .post .thumb span{font-family:"Playfair Display",serif;color:#fff;font-size:1.25rem;line-height:1.2;position:relative;z-index:1}
 .post .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
 .post .cat{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark)}

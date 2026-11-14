@@ -23,7 +23,11 @@
   .cta-row{display:flex;flex-wrap:wrap;gap:14px}
   .hero-photo{position:relative;align-self:end;justify-self:center;width:min(420px,100%)}
   .hero-photo .ring{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:110%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 60%,rgba(201,162,74,.35),transparent 62%);border:1px solid rgba(230,199,122,.25)}
-  .hero-photo img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;border-radius:28px 28px 0 0;mask-image:linear-gradient(to bottom,#000 80%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent)}
+  .hero-photo img{position:relative;z-index:1;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));mask-image:linear-gradient(to bottom,#000 86%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent)}
+  .hero-photo .ring{bottom:auto;top:6%;width:96%;background:radial-gradient(circle at 50% 50%,rgba(230,199,122,.32),rgba(201,162,74,.08) 55%,transparent 70%);border:1.5px solid rgba(230,199,122,.35)}
+  .hero-photo .ring2{position:absolute;left:50%;top:2%;width:108%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;border:1.5px dashed rgba(230,199,122,.28);animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+  .hero-photo .badge{z-index:2}
   .badge{position:absolute;background:rgba(255,255,255,.96);color:var(--navy);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);font-size:.82rem;display:flex;gap:10px;align-items:center;z-index:2}
   .badge b{display:block;font-size:.95rem}
   .badge i{font-style:normal;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--navy);color:var(--gold-2)}
@@ -247,8 +251,8 @@
       </div>
     </div>
     <div class="hero-photo reveal">
-      <div class="ring"></div>
-      <img src="img/joelson-hero.jpg" onerror="this.onerror=null;this.src='img/joelson-terno.jpg'" alt="Joelson Lustosa, contador e CEO">
+      <div class="ring"></div><div class="ring2"></div>
+      <img src="img/joelson-hero.webp" width="760" height="1111" fetchpriority="high" alt="Joelson Lustosa, contador e CEO">
       <div class="badge b1"><i>★</i><div><b>Joelson Lustosa</b>Contador e CEO</div></div>
       <div class="badge b2"><i>💬</i><div><b>Atendimento humano</b>direto pelo WhatsApp</div></div>
     </div>

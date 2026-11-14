@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Joelson Lustosa Contadores Associados</title>
+<meta name="description" content="Artigos sobre impostos, MEI, Reforma Tributária e gestão financeira, escritos pela equipe Joelson Lustosa Contadores Associados, de Teresina-PI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .blog-hero{background:linear-gradient(160deg,var(--navy),var(--navy-3));color:#fff;padding:140px 0 70px}
+  .blog-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4.5vw,3.2rem);margin:14px 0}
+  .blog-hero p{color:rgba(255,255,255,.78);max-width:620px;font-size:1.08rem}
+  .blog-hero .eyebrow{color:var(--gold-2)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .filters button{font-family:inherit;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:500;color:var(--navy)}
+  .filters button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .post.soon{opacity:.75}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-6-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.9 8.9 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 2.2.9 3 1 4.1.8.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></symbol>
+  <symbol id="mark" viewBox="0 0 48 48"><path d="M10 36a17 17 0 0 0 30-4" fill="none" stroke="#e6c77a" stroke-width="2.6" stroke-linecap="round"/><rect x="16" y="24" width="4.5" height="10" rx="1" fill="#c9a24a"/><rect x="22" y="18" width="4.5" height="16" rx="1" fill="#d6b45f"/><rect x="28" y="12" width="4.5" height="22" rx="1" fill="#e6c77a"/><rect x="34" y="6" width="4.5" height="28" rx="1" fill="#e6c77a"/></symbol>
+</svg>
+
+<header class="site solid">
+  <div class="wrap nav">
+    <a href="../index.html" class="logo"><svg><use href="#mark"/></svg><span><b>JOELSON LUSTOSA</b><small>Assessoria e Contabilidade</small></span></a>
+    <nav class="menu"><a href="../index.html#servicos">Serviços</a><a href="../index.html#planilha">Planilha</a><a href="index.html">Blog</a><a class="btn btn-gold" href="#" data-wa>Fale conosco</a></nav>
+  </div>
+</header>
+
+<div class="blog-hero">
+  <div class="wrap">
+    <span class="eyebrow">Blog Joelson Lustosa</span>
+    <h1>Contabilidade sem complicação</h1>
+    <p>Impostos, MEI, Reforma Tributária e finanças explicados de um jeito simples, pelo time de Teresina que cuida da sua empresa.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filtrar por categoria">
+      <button aria-pressed="true" data-f="all">Todos</button>
+      <button aria-pressed="false" data-f="reforma">Reforma Tributária</button>
+      <button aria-pressed="false" data-f="mei">MEI</button>
+      <button aria-pressed="false" data-f="ir">Imposto de Renda</button>
+      <button aria-pressed="false" data-f="gestao">Gestão financeira</button>
+    </div>
+    <div class="posts">
+      <!-- Para criar um novo post: duplique reforma-tributaria-2027.html, troque o texto e adicione um card aqui. -->
+      <a class="post" data-cat="reforma" href="reforma-tributaria-2027.html">
+        <div class="thumb"><span>Reforma Tributária: o que muda em 2027</span></div>
+        <div class="body"><span class="cat">Reforma Tributária</span><h3>IBS e CBS: o que sua empresa precisa decidir agora</h3><p>Entenda o calendário da transição e por que a escolha do regime importa.</p><span class="more">Ler artigo →</span></div>
+      </a>
+      <div class="post soon" data-cat="mei">
+        <div class="thumb"><span>MEI: quando é hora de virar ME?</span></div>
+        <div class="body"><span class="cat">MEI</span><h3>Estourou o limite do MEI? Veja o que fazer</h3><p>Sinais de que seu negócio cresceu e como migrar sem dor de cabeça.</p><span class="more">Em breve</span></div>
+      </div>
+      <div class="post soon" data-cat="gestao">
+        <div class="thumb"><span>Pró-labore x lucro</span></div>
+        <div class="body"><span class="cat">Gestão financeira</span><h3>Pare de misturar o dinheiro da empresa com o seu</h3><p>Como definir seu pró-labore e organizar as finanças do negócio.</p><span class="more">Em breve</span></div>
+      </div>
+      <div class="post soon" data-cat="ir">
+        <div class="thumb"><span>Malha fina: como sair</span></div>
+        <div class="body"><span class="cat">Imposto de Renda</span><h3>Caí na malha fina. E agora?</h3><p>O passo a passo para consultar pendências e regularizar a declaração.</p><span class="more">Em breve</span></div>
+      </div>
+      <div class="post soon" data-cat="gestao">
+        <div class="thumb"><span>Organize seu orçamento</span></div>
+        <div class="body"><span class="cat">Gestão financeira</span><h3>Como organizar as finanças pessoais em 4 passos</h3><p>Um método simples para fazer sobrar dinheiro no fim do mês.</p><span class="more">Em breve</span></div>
+      </div>
+      <div class="post soon" data-cat="mei">
+        <div class="thumb"><span>DAS do MEI em dia</span></div>
+        <div class="body"><span class="cat">MEI</span><h3>DAS atrasado: riscos e como regularizar</h3><p>O que acontece se o MEI não pagar o DAS e como parcelar.</p><span class="more">Em breve</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="copy" style="margin-top:0;border:0;padding-top:0">© <span id="y"></span> Joelson Lustosa Contadores Associados · Teresina-PI · <a href="../index.html" style="color:var(--gold-2)">Voltar ao site</a></div>
+  </div>
+</footer>
+<a class="wa" href="#" data-wa aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg></a>
+<script>
+  const wa = "https://api.whatsapp.com/send?phone=5586981359637&text=" + encodeURIComponent("Olá! Vim pelo blog e gostaria de falar com um contador.");
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
+  document.getElementById("y").textContent = new Date().getFullYear();
+  const btns = document.querySelectorAll(".filters button");
+  btns.forEach(b => b.addEventListener("click", () => {
+    btns.forEach(x => x.setAttribute("aria-pressed", x === b));
+    document.querySelectorAll(".post").forEach(p => p.style.display = (b.dataset.f === "all" || p.dataset.cat === b.dataset.f) ? "" : "none");
+  }));
+</script>
+</body>
+</html>
